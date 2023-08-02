@@ -35,6 +35,17 @@ int main(){
         }
     }
 
-    std::cout << houseData[50000].second;
+    //std::cout << houseData[50000].first << std::endl;;
+
+    //Add all houseData to MaxHeap
+    for (int i = 0; i < houseData.size(); i++)
+    {
+        std::stringstream ss(houseData[i].first);
+        int num = 0;
+        ss >> num;
+        MaxHeap.emplace(std::make_pair(num, houseData[i].second));
+    }
+    // std::cout << MaxHeap.top().first << std::endl;
+    // std::cout << MaxHeap.top().second;
 
 }
