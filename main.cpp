@@ -5,7 +5,6 @@
 #include <sstream>
 #include <iostream>
 #include <unordered_map>
-#include <iterator>
 #include <chrono>
 #include <algorithm>
 #include <exception>
@@ -99,10 +98,14 @@ int main(){
             auto stop_Heap = std::chrono::high_resolution_clock::now();
             auto duration_Heap = std::chrono::duration_cast<std::chrono::microseconds>(stop_Heap - start_Heap);
             cout << "Max Heap (microseconds): " << duration_Heap.count() << endl;
+            found = true;
             break;
         }
         MaxHeap.pop();
     }
 
+    if (!found){
+        cout << "No address found." << endl;
+    }
  return 0;
 }
