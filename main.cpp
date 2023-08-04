@@ -104,8 +104,9 @@ int main(){
         MaxHeap.pop();
     }
 
-    if (!found){
+    if (!found) {
         cout << "No address found." << endl;
     }
+    
  return 0;
 }
